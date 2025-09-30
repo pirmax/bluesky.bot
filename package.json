@@ -1,0 +1,44 @@
+{
+  "name": "typoza",
+  "version": "1.0.0",
+  "private": true,
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma"
+  },
+  "scripts": {
+    "dev": "dotenv -e ./.env turbo run dev",
+    "build": "dotenv -e ./.env turbo run build",
+    "lint": "biome check",
+    "format": "biome format --write",
+    "generate": "turbo run generate",
+    "db:migrate:deploy": "turbo run db:migrate:deploy",
+    "db:push": "turbo run db:push",
+    "db:seed": "turbo run db:seed",
+    "ui": "npm run -w @repo/ui ui --"
+  },
+  "dependencies": {
+    "@atproto/api": "^0.15.27",
+    "@tabler/icons-react": "^3.35.0",
+    "next": "^15.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@tailwindcss/postcss": "^4.1.13",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "dotenv-cli": "^8.0.0",
+    "tailwindcss": "^4.1.13",
+    "tsx": "^4.20.6",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.2"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "bun@1.1.43"
+}

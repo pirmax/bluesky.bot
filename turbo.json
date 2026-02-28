@@ -23,5 +23,12 @@
     }
   },
   "globalDependencies": [".env*"],
-  "globalEnv": ["NEXT_PUBLIC_*", "COOKIE_PASSWORD", "DATABASE_URL", "NODE_ENV"]
+  "globalEnv": [
+    "NEXT_PUBLIC_*",
+    "COOKIE_PASSWORD",
+    "DATABASE_URL",
+    "POSTGRES_URL",
+    "PRISMA_DATABASE_URL",
+    "NODE_ENV"
+  ]
 }

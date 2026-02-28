@@ -20,7 +20,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Claim your bluesky.bot handle today and stand out on Bluesky!",
   description:
-    "Follow the instructions below to get your own bluesky.bot handle and stand out on Bluesky!",
+    "Follow the instructions to get your own bluesky.bot handle and stand out on Bluesky!",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "http://localhost:3000"),
+  openGraph: {
+    siteName: "Bluesky.bot",
+    url: process.env.NEXT_PUBLIC_URL || "http://localhost:3000",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Bluesky.bot - Claim your handle on Bluesky",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

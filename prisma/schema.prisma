@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id          String   @id @default(uuid())
+  did         String   @unique
+  oldHandle   String
+  newHandle   String?
+  displayName String?
+  avatar      String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("users")
+}
+
+model AuthState {
+  key   String @id
+  state String
+
+  @@map("auth_states")
+}
+
+model AuthSession {
+  key     String @id
+  session String
+
+  @@map("auth_sessions")
+}

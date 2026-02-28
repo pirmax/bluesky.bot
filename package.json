@@ -1,45 +1,44 @@
 {
-  "name": "typoza",
-  "version": "1.0.0",
+  "name": "bluesky.bot",
+  "version": "1.1.0",
   "private": true,
-  "prisma": {
-    "schema": "packages/database/prisma/schema.prisma"
-  },
   "scripts": {
-    "dev": "dotenv -e ./.env turbo run dev",
-    "build": "dotenv -e ./.env turbo run build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write",
-    "generate": "turbo run generate",
-    "db:migrate:deploy": "turbo run db:migrate:deploy",
-    "db:push": "turbo run db:push",
-    "db:seed": "turbo run db:seed",
-    "ui": "npm run -w @repo/ui ui --"
+    "format": "biome format --write"
   },
   "dependencies": {
-    "@atproto/api": "^0.15.27",
-    "@tabler/icons-react": "^3.35.0",
-    "next": "^16.1.6",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "@atproto/api": "^0.19.0",
+    "@atproto/oauth-client-node": "^0.3.17",
+    "@prisma/adapter-pg": "^7.4.2",
+    "@prisma/client": "^7.4.2",
+    "@tabler/icons-react": "^3.37.1",
+    "@vercel/analytics": "^1.6.1",
+    "clsx": "^2.1.1",
+    "iron-session": "^8.0.4",
+    "next": "16.1.6",
+    "nextjs-google-analytics": "^2.3.7",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.4",
-    "@tailwindcss/postcss": "^4.1.13",
-    "@tailwindcss/typography": "^0.5.19",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "^24.6.0",
-    "@types/react": "^19.1.16",
-    "@types/react-dom": "^19.1.9",
-    "dotenv-cli": "^8.0.0",
-    "tailwindcss": "^4.1.13",
-    "tsx": "^4.20.6",
-    "turbo": "^2.5.8",
-    "typescript": "^5.9.2"
+    "@biomejs/biome": "2.2.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "prisma": "^7.4.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   },
-  "workspaces": [
-    "apps/*",
-    "packages/*"
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
   ],
-  "packageManager": "bun@1.1.43"
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ]
 }

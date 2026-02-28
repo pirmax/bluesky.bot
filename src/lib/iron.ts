@@ -1,8 +1,8 @@
 "use server";
 
-import type { User } from "@repo/database";
 import { getIronSession, type IronSession } from "iron-session";
 import { cookies } from "next/headers";
+import type { User } from "@/generated/prisma/client";
 
 export type Session = {
   user: User;
